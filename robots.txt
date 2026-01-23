@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://expensemanager.yoursoft.in/sitemap.xml
+Sitemap: https://expensemanager.pro/sitemap.xml
