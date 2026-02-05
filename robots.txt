@@ -1,3 +1,13 @@
+# Robots.txt for Expense Manager
+# https://expensemanager.pro
+
 User-agent: *
 Allow: /
+Allow: /privacy-policy.html
+Allow: /assets/
+
+# Sitemaps
 Sitemap: https://expensemanager.pro/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

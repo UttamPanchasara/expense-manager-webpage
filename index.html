@@ -8,6 +8,10 @@
     <meta name="keywords" content="expense manager, expense tracker, income tracker, money manager, budget app, finance app, privacy mode, bill reminders, multi-currency, expense tracker app, daily expense, income expense tracker, google drive backup, biometric lock, pdf statement, recurring expenses, android app, free expense app">
     <meta name="author" content="Uttam Panchasara">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <!-- Google Search Console Verification - Replace YOUR_VERIFICATION_CODE with actual code from GSC -->
+    <meta name="google-site-verification" content="QHE5zoZMr8arh3O0-guB5fSqW-kQEHR268Fbt72kvzw">
+
     <meta name="theme-color" content="#0C0C1E">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -43,44 +47,63 @@
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - MobileApplication -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
+      "@type": "MobileApplication",
       "name": "Expense Manager",
-      "operatingSystem": "Android",
+      "alternateName": ["Expense Tracker", "Money Manager", "Budget Tracker"],
+      "operatingSystem": "Android 5.0+",
       "applicationCategory": "FinanceApplication",
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "USD"
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.5",
-        "ratingCount": "100"
+        "ratingValue": "4.3",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "63400"
       },
-      "description": "Track income & expenses, analyze spending with visual reports, auto backup to Google Drive, biometric security & PDF statements.",
+      "description": "Free Android app to track income & expenses with privacy mode, smart reminders, multi-currency support. Visual reports, auto backup to Google Drive, biometric security & PDF statements. Your complete personal finance companion.",
       "url": "https://expensemanager.pro/",
       "downloadUrl": "https://play.google.com/store/apps/details?id=vsolutions.expenses",
-      "screenshot": "https://expensemanager.pro/assets/s1.png",
-      "softwareVersion": "Latest",
+      "installUrl": "https://play.google.com/store/apps/details?id=vsolutions.expenses",
+      "screenshot": [
+        "https://expensemanager.pro/assets/s1.png",
+        "https://expensemanager.pro/assets/s2.png",
+        "https://expensemanager.pro/assets/s3.png",
+        "https://expensemanager.pro/assets/s4.png",
+        "https://expensemanager.pro/assets/s7.png"
+      ],
+      "image": "https://expensemanager.pro/assets/logo.png",
+      "softwareVersion": "2.5.2",
+      "datePublished": "2020-01-01",
+      "dateModified": "2026-02-05",
+      "inLanguage": "en",
       "author": {
         "@type": "Person",
-        "name": "Uttam Panchasara"
+        "name": "Uttam Panchasara",
+        "url": "https://expensemanager.pro/"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Expense Manager",
+        "url": "https://expensemanager.pro/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://expensemanager.pro/assets/logo.png"
+          "url": "https://expensemanager.pro/assets/logo.png",
+          "width": 512,
+          "height": 512
         }
       },
       "featureList": [
         "Income & Expense Tracking",
-        "Privacy Mode",
+        "Privacy Mode - Hide sensitive amounts",
         "Smart Reminders & Bill Tracking",
         "Multi-Currency Support (35+ currencies)",
         "Unified Analysis Dashboard",
@@ -89,8 +112,43 @@
         "Biometric Security",
         "PDF Statements",
         "Recurring Transactions",
-        "Dark Mode"
-      ]
+        "Budget Tracking with Alerts",
+        "Dark Mode",
+        "Receipt Management",
+        "No Ads - 100% Free"
+      ],
+      "permissions": "Google Drive (optional backup only)",
+      "memoryRequirements": "50MB",
+      "storageRequirements": "50MB"
+    }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Expense Manager",
+      "url": "https://expensemanager.pro/",
+      "logo": "https://expensemanager.pro/assets/logo.png",
+      "description": "Expense Manager is a privacy-first finance management app designed to help users track income and expenses with powerful features like smart reminders, multi-currency support, and secure Google Drive backup.",
+      "email": "vappsolution@gmail.com",
+      "foundingDate": "2020",
+      "founder": {
+        "@type": "Person",
+        "name": "Uttam Panchasara"
+      }
+    }
+    </script>
+
+    <!-- WebSite Schema for Sitelinks Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Expense Manager",
+      "url": "https://expensemanager.pro/",
+      "description": "Free Android app to track income & expenses with privacy mode, smart reminders, and multi-currency support."
     }
     </script>
 
@@ -214,6 +272,7 @@
       <a
         href="https://play.google.com/store/apps/details?id=vsolutions.expenses"
         target="_blank"
+        rel="noopener noreferrer"
         class="bg-gradient-to-r from-[#7B61FF] to-[#9D7BFF] hover:from-[#6247FF] hover:to-[#8B6BFF] text-white px-6 py-2.5 rounded-full font-medium transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#7B61FF]/25"
       >
         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -251,6 +310,7 @@
         <a
           href="https://play.google.com/store/apps/details?id=vsolutions.expenses"
           target="_blank"
+          rel="noopener noreferrer"
           class="bg-gradient-to-r from-[#7B61FF] to-[#9D7BFF] hover:from-[#6247FF] hover:to-[#8B6BFF] text-white px-8 py-4 rounded-2xl font-semibold transition-all flex items-center justify-center gap-3 shadow-xl shadow-[#7B61FF]/30"
         >
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
@@ -743,6 +803,7 @@
       <a
         href="https://play.google.com/store/apps/details?id=vsolutions.expenses"
         target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center gap-3 bg-gradient-to-r from-[#7B61FF] to-[#9D7BFF] hover:from-[#6247FF] hover:to-[#8B6BFF] text-white px-10 py-5 rounded-2xl font-semibold text-lg transition-all shadow-xl shadow-[#7B61FF]/30"
       >
         <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
