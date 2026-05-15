@@ -44,8 +44,6 @@
     <link rel="apple-touch-icon" href="assets/logo.png" />
 
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com">
-    <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
 
     <!-- JSON-LD Structured Data - MobileApplication -->
     <script type="application/ld+json">
@@ -69,7 +67,7 @@
         "worstRating": "1",
         "ratingCount": "22"
       },
-      "description": "Free expense tracker and budget planner app for Android. Track daily expenses across multiple accounts, manage budgets with alerts, set savings goals, get bill reminders, and view spending reports — all offline with zero ads and 100% privacy. Features include multi-account tracking, home screen activity widget, multiple profiles, payment mode analytics, receipt scanner, biometric lock, multi-currency support, recurring transactions, and Google Drive backup.",
+      "description": "Free expense tracker and budget planner app for Android. Track daily expenses across multiple accounts, transfer money between accounts, adjust balances, manage budgets with alerts, set savings goals, get bill reminders, and view spending reports — all offline with zero ads and 100% privacy. Features include account-to-account transfers, balance adjustments, per-account transaction history, web companion, multi-account tracking, home screen activity widget, multiple profiles, payment mode analytics, receipt scanner, biometric lock, multi-currency support, recurring transactions, and Google Drive backup.",
       "url": "https://expensemanager.pro/",
       "downloadUrl": "https://play.google.com/store/apps/details?id=vsolutions.expenses",
       "installUrl": "https://play.google.com/store/apps/details?id=vsolutions.expenses",
@@ -82,9 +80,9 @@
         "https://expensemanager.pro/assets/s7.png"
       ],
       "image": "https://expensemanager.pro/assets/logo.png",
-      "softwareVersion": "2.7.2",
+      "softwareVersion": "2.11.0",
       "datePublished": "2020-01-01",
-      "dateModified": "2026-02-23",
+      "dateModified": "2026-04-13",
       "inLanguage": "en",
       "author": {
         "@type": "Person",
@@ -103,11 +101,18 @@
         }
       },
       "featureList": [
-        "Multi-Account Tracking - Cash, Bank, Credit Card, Savings (NEW)",
-        "Home Screen Activity Heatmap Widget for Android (NEW)",
-        "Smart Notifications - Streak Alerts & Weekly/Monthly Digest (NEW)",
+        "Account-to-Account Transfers (NEW)",
+        "Balance Adjustments - Reconcile Account Balances (NEW)",
+        "Per-Account Transaction History with Filters (NEW)",
+        "Web Companion - View & Manage from Browser (NEW)",
+        "Recurring Transfers - Automate Regular Money Movement (NEW)",
+        "PDF Statements with Dedicated Transfer Column (NEW)",
+        "Multi-Account Tracking - Cash, Bank, Credit Card, Savings",
+        "Home Screen Activity Heatmap Widget for Android",
+        "Smart Notifications - Streak Alerts & Weekly/Monthly Digest",
         "Multiple Profiles - Personal, Business & Family",
         "Payment Mode Analytics - UPI, Cash, Card Insights",
+        "Invoice Generator",
         "Expense Tracker & Money Manager",
         "Budget Planner with Spending Limits",
         "Savings Goal Tracker",
@@ -194,6 +199,38 @@
         },
         {
           "@type": "Question",
+          "name": "Can I transfer money between accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Account-to-account transfers let you move money between any of your accounts — Cash to Bank, Savings to Credit Card, etc. Both account balances update automatically. You can also set up recurring transfers for regular movements like monthly savings. Transfers appear in your account history and PDF statements with a dedicated Transfer column, but they don't affect your income or expense totals since they're money movement, not spending or earning."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Balance Adjustment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Balance Adjustment lets you reconcile an account's balance with reality. Enter the correct balance and the app calculates and records the difference. This is useful when your app balance doesn't match your bank statement due to missed entries or rounding. Adjustments are visible in your account's transaction history but don't appear in income/expense reports or budgets."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the Web Companion work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Web Companion turns your phone into a local server. Open the app, start the companion from Settings, and scan the QR code or enter the URL on any device connected to the same WiFi network. You can view your transactions, accounts, charts, and quickly add income or expenses from a big screen. All data stays on your local network — nothing goes to the cloud."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use Expense Manager on multiple devices?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Expense Manager is designed as a personal, single-device finance tracker — not a multi-user or multi-device sync app. Your data lives on your device for maximum privacy. If you switch phones, use Google Drive Backup to create a full backup and restore it on the new device. Real-time sync between two devices is not supported — each device maintains its own independent copy of your data."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "How does Privacy Mode protect my financial data?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -276,7 +313,7 @@
     }
     </script>
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/style.css">
     <style>
       @keyframes float {
         0%, 100% { transform: translateY(0px); }
@@ -346,7 +383,7 @@
     <div class="max-w-xl text-center md:text-left z-10">
       <div class="inline-flex items-center gap-2 bg-gradient-to-r from-[#7B61FF]/20 to-[#FF6B9D]/20 px-4 py-2 rounded-full mb-6 border border-[#7B61FF]/30">
         <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-        <span class="text-sm font-medium text-gray-300">New in v2.7 — Account Tracking & Home Screen Widget!</span>
+        <span class="text-sm font-medium text-gray-300">New in v2.11 — Account Transfers, Balance Adjustments & Web Companion!</span>
       </div>
       <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
         Free Expense Tracker &<br />
@@ -486,85 +523,87 @@
     <div class="max-w-6xl mx-auto">
       <div class="text-center mb-16">
         <span class="inline-block px-4 py-1.5 bg-[#7B61FF]/20 text-[#9D7BFF] rounded-full text-sm font-semibold mb-4">LATEST FEATURES</span>
-        <h3 class="text-3xl md:text-5xl font-bold mb-4">What's New in v2.7</h3>
-        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Multi-account tracking, home screen widget, and smart notifications — the biggest update to Expense Manager yet.</p>
+        <h3 class="text-3xl md:text-5xl font-bold mb-4">What's New in v2.11</h3>
+        <p class="text-gray-400 text-lg max-w-2xl mx-auto">Account transfers, balance adjustments, per-account history, and a web companion — your finances, fully connected.</p>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Multi-Account Tracking -->
+        <!-- Account Transfers -->
         <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
           <div class="flex items-start justify-between mb-6">
             <div class="w-14 h-14 bg-gradient-to-br from-[#0EA5E9] to-[#4ECDC4] rounded-2xl flex items-center justify-center">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
               </svg>
             </div>
             <span class="text-xs font-bold bg-green-500/20 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30">NEW</span>
           </div>
-          <h4 class="text-xl font-bold mb-3">Multi-Account Tracking</h4>
-          <p class="text-gray-400 leading-relaxed">Cash, Bank, Credit Card, Savings — manage all your accounts in one place. Every transaction is linked to an account so you always know exactly where your money is moving.</p>
+          <h4 class="text-xl font-bold mb-3">Account Transfers</h4>
+          <p class="text-gray-400 leading-relaxed">Move money between your accounts — HDFC to SBI, Cash to Savings. One tap, both balances update instantly. Set up recurring transfers to automate regular movements.</p>
         </div>
 
-        <!-- Home Screen Widget -->
+        <!-- Balance Adjustments -->
         <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
           <div class="flex items-start justify-between mb-6">
             <div class="w-14 h-14 bg-gradient-to-br from-[#4ECDC4] to-[#38EF7D] rounded-2xl flex items-center justify-center">
               <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
-              </svg>
-            </div>
-            <span class="text-xs font-bold bg-green-500/20 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30">NEW · Android</span>
-          </div>
-          <h4 class="text-xl font-bold mb-3">Home Screen Widget</h4>
-          <p class="text-gray-400 leading-relaxed">A GitHub-style 16-week activity heatmap on your Android home screen. See your income, expense, and streak at a glance — without ever opening the app.</p>
-        </div>
-
-        <!-- Smart Notifications -->
-        <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
-          <div class="flex items-start justify-between mb-6">
-            <div class="w-14 h-14 bg-gradient-to-br from-[#FF6B9D] to-[#FF8E53] rounded-2xl flex items-center justify-center">
-              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
               </svg>
             </div>
             <span class="text-xs font-bold bg-green-500/20 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30">NEW</span>
           </div>
-          <h4 class="text-xl font-bold mb-3">Smart Notifications</h4>
-          <p class="text-gray-400 leading-relaxed">Streak alerts, weekly spending digests, and monthly summaries delivered to your notifications — so your finances always stay top of mind.</p>
+          <h4 class="text-xl font-bold mb-3">Balance Adjustments</h4>
+          <p class="text-gray-400 leading-relaxed">Reconcile your account with reality. Enter the correct balance and the app records the difference — perfect for matching bank statements or fixing entry mistakes.</p>
         </div>
 
-        <!-- Multiple Profiles -->
+        <!-- Account Transaction History -->
         <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
-          <div class="w-14 h-14 bg-gradient-to-br from-[#11998E] to-[#38EF7D] rounded-2xl flex items-center justify-center mb-6">
-            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-            </svg>
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-[#FF6B9D] to-[#FF8E53] rounded-2xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+              </svg>
+            </div>
+            <span class="text-xs font-bold bg-green-500/20 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30">NEW</span>
           </div>
-          <h4 class="text-xl font-bold mb-3">Multiple Profiles <span class="text-xs font-semibold bg-gradient-to-r from-[#7B61FF] to-[#9D7BFF] px-2 py-0.5 rounded-full align-middle">PREMIUM</span></h4>
-          <p class="text-gray-400 leading-relaxed">Separate personal, business, and family finances with dedicated profiles. Each profile has its own transactions, budgets, savings goals, and reports — all in one app.</p>
+          <h4 class="text-xl font-bold mb-3">Account History</h4>
+          <p class="text-gray-400 leading-relaxed">Tap any account to see its full statement — every income, expense, transfer, and adjustment grouped by date. Filter by transaction type and date range.</p>
         </div>
 
-        <!-- Payment Mode Analytics -->
+        <!-- Web Companion -->
+        <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
+          <div class="flex items-start justify-between mb-6">
+            <div class="w-14 h-14 bg-gradient-to-br from-[#11998E] to-[#38EF7D] rounded-2xl flex items-center justify-center">
+              <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <span class="text-xs font-bold bg-green-500/20 text-green-400 px-2.5 py-1 rounded-full border border-green-500/30">NEW</span>
+          </div>
+          <h4 class="text-xl font-bold mb-3">Web Companion</h4>
+          <p class="text-gray-400 leading-relaxed">View your finances on a big screen. Your phone runs a local server — open the link on any device on the same WiFi. Quick-add income and expenses from your browser.</p>
+        </div>
+
+        <!-- Multi-Account Tracking -->
         <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
           <div class="w-14 h-14 bg-gradient-to-br from-[#7B61FF] to-[#9D7BFF] rounded-2xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
             </svg>
           </div>
-          <h4 class="text-xl font-bold mb-3">Payment Mode Analytics <span class="text-xs font-semibold bg-gradient-to-r from-[#7B61FF] to-[#9D7BFF] px-2 py-0.5 rounded-full align-middle">PREMIUM</span></h4>
-          <p class="text-gray-400 leading-relaxed">See how you spend — UPI, Cash, Credit Card, Net Banking and more. Donut charts, 6-month trends, and smart insights like "UPI is your top mode (45%)".</p>
+          <h4 class="text-xl font-bold mb-3">Multi-Account Tracking</h4>
+          <p class="text-gray-400 leading-relaxed">Cash, Bank, Credit Card, Savings — manage all your accounts in one place. Every transaction is linked to an account so you always know exactly where your money is.</p>
         </div>
 
-        <!-- Savings Goals -->
+        <!-- PDF Statements -->
         <div class="glass-card p-8 rounded-3xl feature-card transition-all duration-300">
           <div class="w-14 h-14 bg-gradient-to-br from-[#FF6B9D] to-[#FF8E53] rounded-2xl flex items-center justify-center mb-6">
             <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
             </svg>
           </div>
-          <h4 class="text-xl font-bold mb-3">Savings Goals</h4>
-          <p class="text-gray-400 leading-relaxed">Set financial targets, add deposits, and track progress with visual milestones. Stay motivated and hit your goals faster.</p>
+          <h4 class="text-xl font-bold mb-3">PDF Statements</h4>
+          <p class="text-gray-400 leading-relaxed">Generate professional financial statements with income, expense, and transfer columns. Filter by account, category, or date range. Share or save for your records.</p>
         </div>
       </div>
     </div>
@@ -1024,6 +1063,50 @@
           <p class="mt-4 text-gray-400 leading-relaxed">Payment Mode Analytics is a premium feature that shows how you spend across UPI, Cash, Credit Card, Debit Card, Net Banking, and Wallet. View donut charts for mode distribution, 6-month trends, and smart insights like "UPI is your top mode (45% of spend)". Available in monthly, yearly, and all-time views in the Analysis Dashboard.</p>
         </details>
 
+        <!-- FAQ: Transfers -->
+        <details class="glass-card p-6 rounded-2xl group">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <h3 class="text-lg font-semibold">Can I transfer money between accounts?</h3>
+            <svg class="w-5 h-5 text-[#7B61FF] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">Yes! Account-to-account transfers let you move money between any of your accounts — Cash to Bank, Savings to Credit Card, etc. Both account balances update automatically. You can also set up recurring transfers for regular movements like monthly savings. Transfers appear in your account history and PDF statements with a dedicated Transfer column, but they don't affect your income or expense totals since they're money movement, not spending or earning.</p>
+        </details>
+
+        <!-- FAQ: Balance Adjustment -->
+        <details class="glass-card p-6 rounded-2xl group">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <h3 class="text-lg font-semibold">What is Balance Adjustment?</h3>
+            <svg class="w-5 h-5 text-[#7B61FF] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">Balance Adjustment lets you reconcile an account's balance with reality. Enter the correct balance and the app calculates and records the difference. This is useful when your app balance doesn't match your bank statement due to missed entries or rounding. Adjustments are visible in your account's transaction history but don't appear in income/expense reports or budgets.</p>
+        </details>
+
+        <!-- FAQ: Web Companion -->
+        <details class="glass-card p-6 rounded-2xl group">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <h3 class="text-lg font-semibold">How does the Web Companion work?</h3>
+            <svg class="w-5 h-5 text-[#7B61FF] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">The Web Companion turns your phone into a local server. Open the app, start the companion from Settings, and scan the QR code or enter the URL on any device connected to the same WiFi network. You can view your transactions, accounts, charts, and quickly add income or expenses from a big screen. All data stays on your local network — nothing goes to the cloud.</p>
+        </details>
+
+        <!-- FAQ: Multiple Devices -->
+        <details class="glass-card p-6 rounded-2xl group">
+          <summary class="flex justify-between items-center cursor-pointer list-none">
+            <h3 class="text-lg font-semibold">Can I use Expense Manager on multiple devices?</h3>
+            <svg class="w-5 h-5 text-[#7B61FF] transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </summary>
+          <p class="mt-4 text-gray-400 leading-relaxed">Expense Manager is designed as a personal, single-device finance tracker — not a multi-user or multi-device sync app. Your data lives on your device for maximum privacy. If you switch phones, use Google Drive Backup to create a full backup and restore it on the new device. Real-time sync between two devices is not supported — each device maintains its own independent copy of your data.</p>
+        </details>
+
         <!-- FAQ 4 -->
         <details class="glass-card p-6 rounded-2xl group">
           <summary class="flex justify-between items-center cursor-pointer list-none">
@@ -1198,7 +1281,7 @@
         <div class="flex items-center gap-3">
           <img src="assets/logo.png" alt="Expense Manager Logo" class="w-8 h-8 rounded-lg" />
           <span class="text-white font-semibold text-lg">Expense Manager</span>
-          <span class="text-gray-500 text-sm">v2.7+</span>
+          <span class="text-gray-500 text-sm">v2.11+</span>
         </div>
 
         <div class="flex flex-wrap justify-center items-center gap-4 text-sm text-gray-400">
